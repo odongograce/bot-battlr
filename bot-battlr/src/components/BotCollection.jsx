@@ -11,9 +11,10 @@ function BotCollection() {
             .then((response) => response.json())
             .then((data) => setBots(data))
     }, []);
-    const handleCardClick = (bot) => {
+    const handleCardClick = (bot) => {     
       if (!selectedBots.find((b) => b.id === bot.id)) {
       setSelectedBots([...selectedBots, bot]);
+      
     }
     };
 
