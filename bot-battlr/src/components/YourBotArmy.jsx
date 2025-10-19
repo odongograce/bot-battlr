@@ -27,7 +27,7 @@ function YourBotArmy({ bot, onRelease, onDelete }) {
         Release
         </button>
         <button className="btn btn-danger" onClick={onDelete}>
-          Delete
+          X
         </button>
       </div>
     </div>
