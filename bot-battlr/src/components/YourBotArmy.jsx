@@ -1,6 +1,6 @@
 import React from "react";
 
-function YourBotArmy({ bot, onDischarge, onDelete }) {
+function YourBotArmy({ bot, onRelease, onDelete }) {
   return (
     <div className="card p-4 shadow text-center">
       <img
@@ -23,8 +23,8 @@ function YourBotArmy({ bot, onDischarge, onDelete }) {
       <p><strong>Catchphrase:</strong> {bot.catchphrase}</p>
 
       <div className="d-flex justify-content-around mt-3">
-        <button className="btn btn-warning" onClick={onDischarge}>
-         Discharge
+        <button className="btn btn-warning" onClick={onRelease}>
+        Release
         </button>
         <button className="btn btn-danger" onClick={onDelete}>
           Delete
