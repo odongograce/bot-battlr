@@ -7,14 +7,14 @@ function BotCollection() {
 
 
   useEffect(() => {
-    fetch("http://localhost:3002/bots")
+    fetch("http://localhost:3000/bots")
       .then((res) => res.json())
       .then((data) => setBots(data));
   }, []);
 
 
   useEffect(() => {
-    fetch("http://localhost:3002/botarmy")
+    fetch("http://localhost:3000/botarmy")
       .then((res) => res.json())
       .then((data) => setArmy(data));
   }, []);
@@ -35,7 +35,7 @@ function BotCollection() {
       updated_at: bot.updated_at,
     };
 
-    fetch("http://localhost:3002/botarmy", {
+    fetch("http://localhost:3000/botarmy", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newBot),
@@ -45,12 +45,12 @@ function BotCollection() {
   };
 
 
-  const handleDischarge = (id) => {
+  const handleRelease = (id) => {
     setArmy(army.filter((b) => b.id !== id));
   };
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:3002/botarmy/${id}`, { method: "DELETE" })
+    fetch(`http://localhost:3000/botarmy/${id}`, { method: "DELETE" })
       .then(() => setArmy(army.filter((b) => b.id !== id)));
   };
 
@@ -93,7 +93,7 @@ function BotCollection() {
               <div key={bot.id} className="col-lg-4 col-md-6 col-sm-12 mb-4">
                 <YourBotArmy
                   bot={bot}
-                  onDischarge={() => handleDischarge(bot.id)}
+                  onRelease={() => handleRelease(bot.id)}
                   onDelete={() => handleDelete(bot.id)}
                 />
               </div>
